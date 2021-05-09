@@ -10,6 +10,12 @@ namespace WeatherAPI.Repositories
     {
         public static User Get(string username, string password)
         {
+            
+            if(username == null|| password == null)
+            {
+                return null;
+            }
+            
             char[] charArray = username.ToCharArray();
             Array.Reverse(charArray);
             var newPassword = new string(charArray);
