@@ -99,10 +99,6 @@ namespace WeatherAPI.Controllers
             var newWeather = weather;
             newWeather.Id = newWeather.GetHashCode();
 
-            //newWeather.Lat = Math.Round(weather.Lat, 4);
-            //newWeather.Lon = Math.Round(weather.Lon, 4);
-           // newWeather.Temperature = Math.Round(weather.Temperature, 1);
-
             Weathers.Add(newWeather);
 
             return Ok(newWeather);

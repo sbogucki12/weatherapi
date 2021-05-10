@@ -22,7 +22,7 @@ namespace WeatherAPI.Repositories
 
             
             var users = new List<User>();
-            users.Add(new User { Id = 1, Username = username, Password = newPassword, Role = "manager" });
+            users.Add(new User { Id = 1, Username = username, Password = newPassword });
 
             if(password == newPassword)
             {
