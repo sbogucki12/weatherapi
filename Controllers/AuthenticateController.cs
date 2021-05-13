@@ -13,7 +13,7 @@ namespace WeatherAPI.Controllers
     {
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult<dynamic>> Authenticate([FromBody] User model)
+        public ActionResult Authenticate([FromBody] User model)
         {
             var user = UserRepository.Get(model.Username, model.Password);
 
@@ -22,11 +22,11 @@ namespace WeatherAPI.Controllers
 
             var token = TokenService.CreateToken(user);
             user.Password = "";
-            return new
+            return Ok(new
             {
                 user = user,
                 token = token
-            };
+            });
         }
     }
 }
